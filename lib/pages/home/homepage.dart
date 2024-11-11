@@ -4,6 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import 'cupertino_app.dart';
+import 'material_app.dart';
 
 class Homepage extends StatefulWidget {
   const Homepage({super.key});
@@ -28,7 +29,12 @@ class _HomepageState extends State<Homepage> {
             child: const Text("Cupertino Button"),
           ),
           ElevatedButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => const MaterialExampleScreen()));
+            },
             child: const Text("Material Button"),
           )
         ],

@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/cupertino.dart';
 
 class MyCupertinoApp extends StatefulWidget {
@@ -21,7 +23,7 @@ class _MyCupertinoAppState extends State<MyCupertinoApp> {
       ),
       child: SafeArea(
         child: ListView(
-          padding: EdgeInsets.all(16),
+          padding: const EdgeInsets.all(16),
           children: [
             // Cupertino Button
             CupertinoButton(
@@ -30,25 +32,25 @@ class _MyCupertinoAppState extends State<MyCupertinoApp> {
                 showCupertinoDialog(
                   context: context,
                   builder: (_) => CupertinoAlertDialog(
-                    title: Text("Cupertino Alert"),
-                    content: Text("This is an iOS-style alert dialog."),
+                    title: const Text("Cupertino Alert"),
+                    content: const Text("This is an iOS-style alert dialog."),
                     actions: [
                       CupertinoDialogAction(
-                        child: Text("Cancel"),
+                        child: const Text("Cancel"),
                         onPressed: () => Navigator.of(context).pop(),
                       ),
                       CupertinoDialogAction(
-                        child: Text("OK"),
+                        child: const Text("OK"),
                         onPressed: () => Navigator.of(context).pop(),
                       ),
                     ],
                   ),
                 );
               },
-              child: Text("Show Alert"),
+              child: const Text("Show Alert"),
             ),
 
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
 
             // Cupertino Switch
             Row(
@@ -63,7 +65,7 @@ class _MyCupertinoAppState extends State<MyCupertinoApp> {
               ],
             ),
 
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
 
             // Cupertino Slider
             Row(
@@ -80,7 +82,7 @@ class _MyCupertinoAppState extends State<MyCupertinoApp> {
               ],
             ),
 
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
 
             // Cupertino Date Picker
             CupertinoButton(
@@ -115,7 +117,7 @@ class _MyCupertinoAppState extends State<MyCupertinoApp> {
               ],
             ),
 
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
 
             // Cupertino Text Field
             const CupertinoTextField(
@@ -131,18 +133,18 @@ class _MyCupertinoAppState extends State<MyCupertinoApp> {
               placeholder: "Cupertino Search",
             ),
 
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
 
             // Cupertino Context Menu
             Center(
               child: CupertinoContextMenu(
                 actions: [
                   CupertinoContextMenuAction(
-                    child: Text("Action 1"),
+                    child: const Text("Action 1"),
                     onPressed: () => Navigator.pop(context),
                   ),
                   CupertinoContextMenuAction(
-                    child: Text("Action 2"),
+                    child: const Text("Action 2"),
                     onPressed: () => Navigator.pop(context),
                   ),
                 ],
@@ -151,12 +153,12 @@ class _MyCupertinoAppState extends State<MyCupertinoApp> {
                   height: 100,
                   color: CupertinoColors.activeBlue,
                   alignment: Alignment.center,
-                  child: Text("Hold Me"),
+                  child: const Text("Hold Me"),
                 ),
               ),
             ),
 
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
 
             // Cupertino Action Sheet
             CupertinoButton(
@@ -165,29 +167,29 @@ class _MyCupertinoAppState extends State<MyCupertinoApp> {
                 showCupertinoModalPopup(
                   context: context,
                   builder: (_) => CupertinoActionSheet(
-                    title: Text("Cupertino Action Sheet"),
-                    message: Text("Choose an option"),
+                    title: const Text("Cupertino Action Sheet"),
+                    message: const Text("Choose an option"),
                     actions: [
                       CupertinoActionSheetAction(
-                        child: Text("Option 1"),
+                        child: const Text("Option 1"),
                         onPressed: () => Navigator.pop(context),
                       ),
                       CupertinoActionSheetAction(
-                        child: Text("Option 2"),
+                        child: const Text("Option 2"),
                         onPressed: () => Navigator.pop(context),
                       ),
                     ],
                     cancelButton: CupertinoActionSheetAction(
-                      child: Text("Cancel"),
+                      child: const Text("Cancel"),
                       onPressed: () => Navigator.pop(context),
                     ),
                   ),
                 );
               },
-              child: Text("Show Action Sheet"),
+              child: const Text("Show Action Sheet"),
             ),
 
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
 
             // Cupertino Picker
             CupertinoButton(
@@ -201,7 +203,7 @@ class _MyCupertinoAppState extends State<MyCupertinoApp> {
                     child: CupertinoPicker(
                       itemExtent: 40,
                       onSelectedItemChanged: (int index) {
-                        print("Selected item: $index");
+                        log("Selected item: $index");
                       },
                       children: List.generate(
                         5,
@@ -211,7 +213,7 @@ class _MyCupertinoAppState extends State<MyCupertinoApp> {
                   ),
                 );
               },
-              child: Text("Show Cupertino Picker"),
+              child: const Text("Show Cupertino Picker"),
             ),
           ],
         ),
