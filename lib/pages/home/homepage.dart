@@ -3,6 +3,8 @@ import 'dart:io';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import 'cupertino_app.dart';
+
 class Homepage extends StatefulWidget {
   const Homepage({super.key});
 
@@ -19,7 +21,10 @@ class _HomepageState extends State<Homepage> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           CupertinoButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => MyCupertinoApp()));
+            },
             child: const Text("Cupertino Button"),
           ),
           ElevatedButton(
